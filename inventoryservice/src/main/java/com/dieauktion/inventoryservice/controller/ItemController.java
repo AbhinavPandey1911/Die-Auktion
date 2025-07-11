@@ -35,8 +35,12 @@ import org.springframework.web.bind.annotation.RestController;
     @PostMapping(value = "/items", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public void addItems(@ModelAttribute @Valid ItemRequestDTO itemRequestDTO){
         System.out.println(itemRequestDTO);
-        System.out.println(itemRequestDTO.getItemPrice());
-        
+        System.out.println(itemRequestDTO.getItemPrice().getCurrency());
+        /*
+            Add the feign call to Amazon services to upload images there
+         */
+
+
     }
 
 }
